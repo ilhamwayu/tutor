@@ -1,0 +1,10 @@
+<h1 *ngIf="showLabel == false">{{title}}</h1><br>
+<button (click)="this.show()" *ngIf="showLabel == true">
+    Show Label
+</button>
+<button (click)="this.hide()" *ngIf="showLabel == false">
+    Hide Label
+</button>
+<h2>{{digit}}</h2>
+<button (click)="min()">-</button>
+<button (click)="plus()">+</button>
