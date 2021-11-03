@@ -9,7 +9,8 @@ export class HomeComponent implements OnInit {
 
   title = "ANGULAR TOUR OF HEROES";
   digit:number = 0;
-  nama:string ="";
+  nama:string  = "";
+  label:string = "";
   showLabel:boolean = false;
 
   constructor() { }
@@ -42,4 +43,8 @@ export class HomeComponent implements OnInit {
 	hide(){
 		this.showLabel = true;
 	}
+
+  onKeyUpEvent(event: any){
+    this.label = event.target.value;
+  }
 }
