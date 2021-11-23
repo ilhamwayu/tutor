@@ -1,20 +1,32 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './pages/home/home.component';
-import { NavbarComponent } from './layouts/navbar/navbar.component';
+
+// MODUL
+import { LayoutsModule } from './layouts/layouts.module';
+import { HomeModule } from './pages/home/home.module';
+import { AboutModule } from './pages/about/about.module';
+import { CollectionsModule } from './pages/collections/collections.module';
+import { CollectionsDetailModule } from './pages/collections-detail/collections-detail.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    NavbarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    LayoutsModule,
+    HomeModule,
+    AboutModule,
+    CollectionsModule,
+    CollectionsDetailModule,
+    NgbModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

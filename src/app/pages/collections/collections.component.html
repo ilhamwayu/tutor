@@ -1,0 +1,44 @@
+<div class="container mt-4">
+    <h1>Collections</h1>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="collections">
+                <div class="list-collection" *ngFor="let collections of data | paginate: { itemsPerPage: count, currentPage: p }">
+                    <img class="img" src="http://angushop.anurdin.net/{{collections.image}}" alt="">
+                    <div class="btn-hover">
+                        <label class="label-name">{{collections.productName}}</label>
+                        <span class="category-name">Baju</span>
+                        <div class="rating-product">
+                            <ngb-rating [rate]="collections.rate"></ngb-rating>
+                        </div>
+                        <span class="price">{{collections.price | currency: 'USD'}}</span>  
+                    </div>
+                    <div class="box-btn">
+                        <label (click)="detail(collections.slug)" class="btn-main">
+                            <li class="fa fa-cart-plus"></li>
+                        </label>
+                    </div>
+                </div>
+                <pagination-controls class="pagination" (pageChange)="p = $event"></pagination-controls>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="main-filter">
+                <div class="title">
+                    <h6 class="label-filter">Filter</h6>
+                </div>
+                <div class="inp-filter">
+                    <div class="inp-group">
+                        <input type="text" class="form-control inp-fadd" placeholder="Search">
+                    </div>
+                </div>
+                <div class="category-filter">
+                    <h6 class="label-filter">Category</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
